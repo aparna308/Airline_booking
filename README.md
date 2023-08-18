@@ -14,7 +14,9 @@ Created 2 models- XGBoost with default parameters and XGBoost with hyperparamete
 
 Result- XGBoost with hypertuned parameters is giving a higher acccuracy and f1 score.
 Accuracy of the model- 71.28% 
+
 F1 Score of the model- 72.02%
+
 
 A detailed explaination of all the steps-
 The dataset contains 50002 entries.
