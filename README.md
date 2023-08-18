@@ -1,9 +1,15 @@
-Goal- The dataset contains information about customer bookings of an airline. Train a classification model which will predict whether or not a customer will make a booking. This model will help the airline companies to understand their customer's behaviour, which will result in increased number of bookings for them.
+Goal- 
+The dataset contains information about customer bookings of an airline. Train a classification model which will predict whether or not a customer will make a booking. This model will help the airline companies to understand their customer's behaviour, which will result in increased number of bookings for them.
 
-Solution Approach- First data cleaning is done, followed by data visualization using seaborn.
-Some categorical columns have a large number of classes, so creating dummy variables for each class will result in hundereds of new features. To avoid this, I have taken the top 25 classes with most number of records in categorical column, then created dummy variables for only these 25 classes. Same is repeated for all categorical columns with large number of classes.
+Solution Approach- 
+First data cleaning is done, followed by data visualization using seaborn.
+
+Some categorical columns have a large number of classes, so creating dummy variables for each class will result in hundereds of new features. 
+To avoid this, I have taken the top 25 classes with most number of records in categorical column, then created dummy variables for only these 25 classes. Same is repeated for all categorical columns with large number of classes.
+
 The dataset provided is imbalanced so use undersampling to make the number of observations of majority class equal to number of observations in minority class. 
 Then I have used Hyperparameter tuning to get the best possible values for the parameters used in XGBoost.
+
 Created 2 models- XGBoost with default parameters and XGBoost with hyperparameter tuned paramters.
 
 Result- XGBoost with hypertuned parameters is giving a higher acccuracy and f1 score.
