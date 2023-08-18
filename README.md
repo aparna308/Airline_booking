@@ -1,4 +1,13 @@
-The dataset contains information about previous customer bookings. Based on past records, I've trained a model which will predict whether or not the customer will make a booking.
+Goal- The dataset contains information about customer bookings of an airline. Train a classification model which will predict whether or not a customer will make a booking. This model will help the airline companies to understand their customer's behaviour, which will result in increased number of bookings for them.
+
+Solution Approach- I have done analysis of dataset and data preprocessing. Some categorical columns have a large number of classes, so creating dummy variables for each class will result in hundereds of new features. To avoid this, I have taken the top 25 classes with most number of records in each of these categorical columns, then created dummy variables for these 25 classes. Same is repeated for all categorical columns with large number of classes.
+Then I have used Hyperparameter tuning to get the best possible values for the parameters used in XGBoost.
+Undersampling of dataset to deal with the imbalanced dataset.
+Created 2 models- XGBoost with default parameters and XGBoost with hyperparameter tuned paramters.
+
+Result- XGBoost with default parameters is giving a higher acccuracy and f1 score.
+
+A detailed explaination of all the steps-
 The dataset contains 50002 entries.
 The features in the dataset-
 1. num_passengers
@@ -32,7 +41,7 @@ A high level walk through of the steps I followed to make the model-
    route     796
    booking_origin     103
 9. Number of classes is less in sales_channel, trip_type and fligt_day so created dummies variables for these categorical columns.
-10. route and booking_origin has a lot of classes so replacing them with dummy columns will result in (796+103=900) new columns! That is too many columns, so instead, I picked the top 25 classes with most number of entries in each of the two columns and created dummy columns for these 25 classes.
+10. route and booking_origin has a lot of classes so replacing them with dummy columns will result in (796+103=900) new columns! That is too many new features, so instead, I picked the top 25 classes with most number of entries in each of the two columns and created dummy columns for these 25 classes.
 11. Drop route and booking_origin column since they are replaced by their dummy columns.
 12. Divide into test and train dataset.
 13. Use hyperparameters tuning on XG Boost to get the best possible result.
@@ -44,4 +53,4 @@ A high level walk through of the steps I followed to make the model-
 18. Do undersampling, i.e., reduce the number of rows that are classified 0 to be equal around the number of rows that are classified as 1.
 19. Make the hyperparameters tuned on XG Boost model and default XG Boost model again.
 20. This time the accuracy of hyperparameter tuned on XG Boost is 0.7101484546118277 (71%) and F1 score is 0.7145938173975557 (71%).
-21. This is much better result than last time.
+21. This is much better result than what we were getting before undersampling. XGBoost with default parameters is giving a higher acccuracy and f1 score than hyperparameter tuned XGBoost.
