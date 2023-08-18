@@ -5,7 +5,9 @@ Then I have used Hyperparameter tuning to get the best possible values for the p
 Undersampling of dataset to deal with the imbalanced dataset.
 Created 2 models- XGBoost with default parameters and XGBoost with hyperparameter tuned paramters.
 
-Result- XGBoost with default parameters is giving a higher acccuracy and f1 score.
+Result- XGBoost with hypertuned parameters is giving a higher acccuracy and f1 score.
+Accuracy of the model- 71.28% 
+F1 Score of the model- 72.02%
 
 A detailed explaination of all the steps-
 The dataset contains 50002 entries.
