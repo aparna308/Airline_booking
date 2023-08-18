@@ -1,8 +1,9 @@
 Goal- The dataset contains information about customer bookings of an airline. Train a classification model which will predict whether or not a customer will make a booking. This model will help the airline companies to understand their customer's behaviour, which will result in increased number of bookings for them.
 
-Solution Approach- I have done analysis of dataset and data preprocessing. Some categorical columns have a large number of classes, so creating dummy variables for each class will result in hundereds of new features. To avoid this, I have taken the top 25 classes with most number of records in each of these categorical columns, then created dummy variables for these 25 classes. Same is repeated for all categorical columns with large number of classes.
+Solution Approach- First data cleaning is done, followed by data visualization using seaborn.
+Some categorical columns have a large number of classes, so creating dummy variables for each class will result in hundereds of new features. To avoid this, I have taken the top 25 classes with most number of records in categorical column, then created dummy variables for only these 25 classes. Same is repeated for all categorical columns with large number of classes.
+The dataset provided is imbalanced so use undersampling to make the number of observations of majority class equal to number of observations in minority class. 
 Then I have used Hyperparameter tuning to get the best possible values for the parameters used in XGBoost.
-Undersampling of dataset to deal with the imbalanced dataset.
 Created 2 models- XGBoost with default parameters and XGBoost with hyperparameter tuned paramters.
 
 Result- XGBoost with hypertuned parameters is giving a higher acccuracy and f1 score.
@@ -54,5 +55,5 @@ A high level walk through of the steps I followed to make the model-
 17. F1 score is low because it is an imbalanced dataset. Number of 0s in booking_complete is much more than 1s. 
 18. Do undersampling, i.e., reduce the number of rows that are classified 0 to be equal around the number of rows that are classified as 1.
 19. Make the hyperparameters tuned on XG Boost model and default XG Boost model again.
-20. This time the accuracy of hyperparameter tuned on XG Boost is 0.7101484546118277 (71%) and F1 score is 0.7145938173975557 (71%).
-21. This is much better result than what we were getting before undersampling. XGBoost with default parameters is giving a higher acccuracy and f1 score than hyperparameter tuned XGBoost.
+20. This time the accuracy of hyperparameter tuned XG Boost model is around 71% and F1 score is around 72%.
+    This is much better f1 score than what we were getting before undersampling. 
